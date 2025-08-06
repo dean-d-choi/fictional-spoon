@@ -14,7 +14,7 @@ jobs:
     - name: Checkout repo
       uses: actions/checkout@v4
       with:
-        token: ${{ secrets.DEAN_PAT }}   # 위에서 등록한 토큰
+        token: ${{ secrets.DEAN_PAT }}
 
     - name: Set git identity
       run: |
@@ -25,10 +25,7 @@ jobs:
       env:
         TZ: Asia/Seoul
       run: |
-        for i in $(seq 1 50); do
-          printf '%s\n' "$(date '+%Y-%m-%d %H:%M:%S')" >> README.md
-          git add README.md
-          git commit -m "chore(auto): $(date '+%F %T') [$i/50]"
-        done
-        # 한꺼번에 50개 푸시 (푸시 1회 = API 호출 1회)
+        printf '%s\n' "$(date '+%Y-%m-%d %H:%M:%S')" >> README.md
+        git add README.md
+        git commit -m "chore(auto): $(date '+%F %T') [$i/50]"
         git push

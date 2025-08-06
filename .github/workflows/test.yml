@@ -14,7 +14,7 @@ jobs:
     - name: Checkout repo
       uses: actions/checkout@v4
       with:
-        token: ${{ secrets.PAT }}   # 위에서 등록한 토큰
+        token: ${{ secrets.DEAN_PAT }}   # 위에서 등록한 토큰
 
     - name: Set git identity
       run: |

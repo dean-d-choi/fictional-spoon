@@ -25,7 +25,7 @@ jobs:
       env:
         TZ: Asia/Seoul
       run: |
-        printf '%s\n' "$(date '+%Y-%m-%d %H:%M:%S')" >> README.md
+        printf '\n%s\n' "$(date '+%Y-%m-%d %H:%M:%S')" >> README.md
         git add README.md
         git commit -m "chore(auto): $(date '+%F %T') [$i/50]"
         git push
